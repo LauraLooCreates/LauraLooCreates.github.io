@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Accessibility assessment</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+      <!--REFLECTION ON SCREEN READER-- When I was using the screen reader I cllicked on the title and it read it but then
+      turned the screen reader off, when it went to a pargraph part. It did not know to go down to the aside. IT would not
+      read the table and would just repeat the name of my thing saying, "accessiblity laura assessment" It owuld not read smoothly
+      at first but then I fixed it-->
+     <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+     <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Welcome to our wildlife website</h1>
+    </header>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+
+      <form class="search">
+        <input type="search" name="q" placeholder="Search query" aria-label="Search Box">
+        <input type="submit" value="Go!">
+      </form>
+    </nav>
+
+    <main>
+      <article>
+        <h2>The trouble with Bears</h2>
+        <p>
+        By Evan Wild
+        </p>
+        <p>
+        Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.
+        </p>
+        <p>
+        So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.
+        </p>
+        <p>
+        <h3>Types of bear</h3>
+        </p>
+        <p>
+        Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.
+        </p>
+        <p>
+        Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.
+        </p>
+        <table>
+          <caption>A table of Bears and the different facts about them</caption>
+          <thead>
+            <tr>
+              <th scope="col">Bear Type</th>
+              <th scope="col">Coat</th>
+              <th scope="col">Adult size</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Lifespan</th>
+              <th scope="col">Diet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Wild</th>
+              <th >Brown or black</th>
+              <th>1.4 to 2.8 meters</th>
+              <th>Woods and forests</th>
+              <th>25 to 28 years</th>
+              <th>Fish, meat, plants</th>
+            </tr>
+            <tr>
+              <th scope="row">Urban</th>
+              <th>North Face</th>
+              <th>18 to 22</th>
+              <th>Condos and coffee shops</th>
+              <th>20 to 32 years</th>
+              <th>Starbucks, sushi</th>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Habitats and Eating habits</h3>
+        <p>
+        Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
+        <p>
+        <img src="media/wild-bear.jpg" alt="bear in the water">
+        </p><p>
+        Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
+        </p><p>
+        <img src="media/urban-bear.jpg" alt="bear in cage sad and angry">
+        </p><p>
+        Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.
+        </p><p>
+        <h3>Mating rituals</h3>
+        </p><p>
+        Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.
+        </p><p>
+        The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.
+        </p>
+        <audio controls>
+          <source src="media/bear.mp3" type="audio/mp3">
+          <source src="media/bear.ogg" type="audio/ogg">
+          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+        </audio>
+
+        <aside>
+
+          <h3>About the author</h3>
+        <p>
+          Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.
+        </p><p>
+          He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.
+        </p>
+        </aside>
+        <section class="comments">
+          <button class="show-hide">Show comments</button>
+
+          <section class="comment-wrapper">
+
+            <h2>Add comment</h2>
+
+            <form class="comment-form">
+              <p class="flex-pair">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+              </p>
+              <p class="flex-pair">
+                <label for="comment">Your comment:</label>
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+              </p>
+              <p>
+                <input type="submit" value="Submit comment">
+              </p>
+            </form>
+
+            <h2>Comments</h2>
+
+            <ul class="comment-container">
+
+              <li>
+
+                <p>Bob Fossil</p>
+
+                <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
+
+              </li>
+
+            </ul>
+
+          </section>
+        </section>
+      </article>
+
+      <article class="secondary">
+        <h2>Related</h2>
+
+        <ul>
+          <li><a href="#">The trouble with Bees</a></li>
+          <li><a href="#">The trouble with Otters</a></li>
+          <li><a href="#">The trouble with Penguins</a></li>
+          <li><a href="#">The trouble with Octopi</a></li>
+          <li><a href="#">The trouble with Lemurs</a></li>
+        </ul>
+      </article>
+    </main>
+
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
