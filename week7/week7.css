@@ -1,0 +1,25 @@
+        div {
+             border: 5px,dotted, rgb(159, 221, 14);
+            height: 50px;
+            width: 50px;
+            /* 4 elements, top, bottom, left right */
+            /* 2 elements: top and bottom. right and left */
+            /* 1 element: all sides! */
+        }
+        div{
+            border: 10px solid hotpink;
+            margin: 250px,250px;
+        }
+        .box{
+            /* rule:parameters */
+            border: 5px,solid, rgb(59, 118, 105);
+            height: 100px;
+            width: 100px;
+        }
+        /* # refers to the id and the . refers to the class...because
+        you use a # it overrides the . and the div because # is super specific */
+        #box2{
+             border: 5px,dashed, rgb(217, 162, 22);
+            height: 200px;
+            width: 200px;
+        }
