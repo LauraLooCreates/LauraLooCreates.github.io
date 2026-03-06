@@ -135,20 +135,7 @@
             color: var(--color-neutral);
         }
 
-        /* Spacing Demonstration */
-        /* .spacing-demo {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        } */
-
-        /* .spacing-block {
-            background-color: var(--color-primary);
-            height: 50px;
-        } */
-
-        nav ul{
+        .navbar ul{
             width: 100%;
             height: 80px;
             margin:0;
@@ -170,3 +157,8 @@
             font-size: larger;
             text-decoration: none;
         }
+
+    .logolink img{
+        width:20px;
+        height: auto;
+    }
