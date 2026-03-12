@@ -5,32 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="../portfolio.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="navbar">
-                <li><a href="laurabaker.html" class="logo"><img src="otherphotos/bumblelogo.PNG" alt="LauraLooLogo"></a></li>
-                <li><a href="laurabaker.html">Laura Baker</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+        <nav class="navbar">
+            <ul>
+                <li><a href="laurabaker.html" class="logo"><img src="otherphotos/bumblelogo.PNG" alt="LauraLooLogo">Laura Baker</a></li>
+                 <li><a href="laurabaker.html">Home</a></li>
+                <li><a href="gallery.html">Art</a></li>
                 <li><a href="music.html">Music</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <!-- <li><a href="shop.html">Shop</a></li> -->
                 <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header> 
+    </header>
     <main>
-        <div class="contactbox">
-            <div>Email</div>
-            <div>Instagram</div>
-            <div>Resume</div>
-        </div>
+       <section class="contact-section">
+        <form target="_blank" method="GET">
+            <p>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="fullname">
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </p>
+            <p>
+                <label for="Whatfor?">What for?</label>
+                <select id="Whatfor?" name="Whatfor?">
+                    <option>Purchase Sticker</option>
+                    <option>Art Commission</option>
+                    <option>Violin</option>
+                    <option>Employer</option>
+                </select>
+
+            </p>
+            <input type="submit" value="Register">
+        </form>
+       </section>
     </main>
+    <footer>
+        <p>&copy; 2026 Laura Baker. All rights reserved.</p>
+        <p>
+            laba9957&#64colorado.edu
+        </p>
+    </footer>
 </body>
 </html>

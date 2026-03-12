@@ -74,13 +74,13 @@
             font-family: var(--font-primary);
             font-size: 2rem;
             font-weight: 600;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
             color: var(--color-secondary);
         }
 
         h3 {
             font-family: var(--font-secondary);
-            font-size: 1.5rem;
+            font-size: 10px;
             font-weight: 500;
             margin-bottom: var(--spacing-sm);
             color: var(--color-accent);
@@ -104,7 +104,7 @@
             align-items: center;
             list-style-type: none;
             margin:0;
-            padding: 0 40px;
+            padding: 0 30px;
             background-color: var(--color-accent);
         }
 
@@ -115,21 +115,21 @@
         .navbar ul li a{
             color: #fffaee;
             font-family: var(--font-primary);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-decoration: none;
             padding: 15px 20px;
             display: flex;
             align-items: center;
-            transition: #5c726c 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease, color 0.3s ease;
         }
 
         .navbar ul li a:not(:first-child){
-            margin-left: 10px;
+            margin-left: 50px;
         }
         
 
         .navbar  ul li a:hover{
-            background-color: var(--color-primary);
+            background-color: var(--color-neutral);
             color: var(--color-background);
             border-radius: 5px;
         }
@@ -144,14 +144,32 @@
             gap: 10px;
         }
 
-        title {
+        /* --------HOMEPAGE--------------------------------------------- */
+
+        .big-title {
             font-style: var(--font-primary);
-            font-size: 245px;
-            height: 200px;
+            font-size: clamp(5rem, 15vw, 12rem);
             text-align: center;
             justify-content: center;
             color: #564210;
-            display: flex;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            
+        }
+
+        .me-line{
+            width: 100%;
+            height: auto;
+            color: #fffaee;
+            background: var(--color-neutral);
+            padding: 5px 0;
+            text-align: center;
+            font-family: var(--font-secondary);
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        
+
         }
 
         .container div{
@@ -209,9 +227,8 @@
          #gallery-container img:hover{
             transform: scale(1.05);
             border-radius: 5px;
+            opacity: 0.5;
         }
-
-
 
         #gallery-container>div img{
             width: 100%;
@@ -234,4 +251,196 @@
             font-size: 80px;
             font-family: var(--font-primary);
         }
-    
+
+.music-intro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.music-intro h1{
+    font-size: 150px;
+    margin: 0;
+    position: relative;
+}
+
+.music-blurb{
+    flex:2;
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    color: var(--color-neutral);
+    border-left: 5px solid var(--color-highlight);
+    padding-left: 20px;
+}
+
+.event-block{
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+
+}
+
+.event-block h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.event-block h3{
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.musicgrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    grid-auto-flow: dense;
+    width: 100%;
+}
+
+.musicphoto{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px
+}
+
+.musicphoto img, .musicphoto-wide img{
+    width:100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.musicphoto-wide {
+    grid-column: span 2;
+
+}
+
+.musicphoto img:hover{
+    transform: scale(1.04);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .musicphoto-wide {
+        grid-column: span 1;
+    }
+    .music-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    .musicblurb {
+        border-left: none;
+        border-top: 3px solid var(--color-highlight);
+        padding: 20px 0 0 0;
+    }
+}
+
+/* -----CONTACT PAGE-------------------------------- */
+.contact-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+form{
+    font-family: var(--font-primary);
+    background-color: #645d49;
+    padding: 50px;
+    border-radius: 5px;
+    color: var(--color-background);
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form p{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label{
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+
+input [type=text], input [type=email], select{
+    box-sizing: border-box;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #564210;
+    border-radius: 5px;
+}
+
+input[type=submit]{
+    width: 200px;
+    background-color: #446e98;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+   background-color: #07d;
+}
+
+/* ------ABOUT SECTION------------------------ */
+.about-section{
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.about-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-meta{
+    padding: 10px 5px;
+}
+
+.about-meta h3{
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tiny-line{
+
+}
+
+.about-item .musicphoto img{
+    width:100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
