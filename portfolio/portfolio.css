@@ -216,7 +216,10 @@
             margin: 0 auto;
 
             grid-auto-flow: dense;
-            grid-auto-rows: auto + 10px;
+            grid-auto-rows: auto;
+
+            justify-content: center;
+            padding-bottom: 40px;
 
         }
 
@@ -434,9 +437,6 @@ input[type=submit]:hover {
     letter-spacing: 1px;
 }
 
-.tiny-line{
-
-}
 
 .about-item .musicphoto img{
     width:100%;
@@ -444,3 +444,69 @@ input[type=submit]:hover {
     object-fit: cover;
     border-radius: 5px;
 }
+
+.galleryblurb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 10px;
+    
+}
+
+.galleryblurb p{
+    font-size: 40px;
+    font: var(--font-secondary);
+    color: var(--color-text-dark);
+    text-align: center;
+}
+
+.sticker-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    grid-auto-flow: dense;
+    width: 100%;
+}
+
+.sticker-item{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.sticker-item img{
+    width:100%;
+    height: 425px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+.sticker-container img:hover{
+    opacity: 0.8;
+    transform: scale(1.04);
+    transition: transform .3s ease-in-out;
+}
+
+.fillthespace{
+    background-color: var(--color-neutral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+}
+
+.fillthespace span{
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-background);
+    text-align: center;
+    padding: 10px;
+}
+
