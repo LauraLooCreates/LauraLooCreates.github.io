@@ -362,40 +362,11 @@
 }
 
 /* -----CONTACT PAGE-------------------------------- */
-.contact-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-}
-
-form{
-    font-family: var(--font-primary);
-    background-color: #645d49;
-    padding: 50px;
-    border-radius: 5px;
-    color: var(--color-background);
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 
 form p{
     display: flex;
     flex-direction: column;
-    gap: 5px;
-}
-
-label{
-    width: 50px;
-    display: inline-block;
-    text-align: center;
-    margin-right: 10px;
-}
+    gap: 5px;}
 
 input [type=text], input [type=email], select{
     box-sizing: border-box;
@@ -407,17 +378,82 @@ input [type=text], input [type=email], select{
 
 input[type=submit]{
     width: 200px;
-    background-color:rgb(154, 203, 246);
-    color: var(--color-text-dark);
+    background-color:var(--color-text-dark);
+    color: var(--color-background);
     padding: 15px;
     margin: 10px 0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-input[type=submit]:hover {
+
+ input[type=submit]:hover {
    background-color: var(--color-secondary);
+} 
+
+
+.contact-grid-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 60px 20px;
 }
+
+.contact-info-side{
+    flex:1;
+    text-align: left;
+}
+
+.contact-info-side .contact-title{
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.contact-info-side .contact-blurb{
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.resume-button-container{
+    display: flex;
+    gap: 15px;
+}
+
+.resume-btn{
+    display: inline;
+    padding: 9px 20px;
+    color: var(--color-background);
+    background-color: var(--color-accent);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    transition: var(--color-secondary) 0.3s ease;
+}
+
+.resume-btn:hover{
+    background-color: var(--color-secondary);
+}
+
+.vertical-divider{
+    width: 2px;
+    background-color: var(--color-highlight);
+    align-items: stretch;
+}
+.contact-form-side{
+    flex:1;
+}
+
+form{
+    background-color:#b4a594;
+    padding: 50px 40px;
+    margin:0;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
 
 /* ----------------------------------------ABOUT SECTION------------------------------------- */
 
@@ -605,32 +641,7 @@ input[type=submit]:hover {
     font-weight: 500;
 }
 
-.contact-link{
-    color: var(--color-accent);
-    text-decoration: underline;
-    font-weight: 700;
-}
 
-.contact-title{
-    font-size: clamp(5rem, 12vw, 9rem);
-    margin-bottom: 10px;
-    font-family: var(--font-primary);
-    color: var(--color-primary);
-}
-
-.contact-blurb{
-    font-family: var(--font-secondary);
-    font-size: 1.5rem;
-    color: #645d49;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.contact-container{
-    display: grid;
-
-
-}
 .line{
     width: 1000px;
     height: 3px;
