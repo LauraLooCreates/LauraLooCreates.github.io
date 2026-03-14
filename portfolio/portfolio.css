@@ -391,7 +391,14 @@ input[type=submit]{
    background-color: var(--color-secondary);
 } 
 
+.contact-link{
+    color: #04644c;
+    font-weight: 500;
+}
 
+.contact-link:hover{
+    color: #446e98;
+}
 .contact-grid-container{
     display: flex;
     align-items: flex-start;
@@ -406,9 +413,13 @@ input[type=submit]{
     text-align: left;
 }
 
-.contact-info-side .contact-title{
+.contact-info-side {
     margin-bottom: 10px;
     line-height: 1;
+}
+
+.contact-title{
+    font-size: 80px;
 }
 
 .contact-info-side .contact-blurb{
@@ -453,7 +464,12 @@ form{
     max-width: 100%;
     border-radius: 5px;
 }
-
+label{
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 600;
+    color: #443309;
+}
 
 /* ----------------------------------------ABOUT SECTION------------------------------------- */
 
@@ -623,7 +639,7 @@ form{
 }
 
 .sticker-divider{
-    width: 1000px;
+    width: stretch;
     height: 3px;
     background-color: var(--color-highlight);
     margin: 10px auto;
@@ -674,4 +690,43 @@ form{
     color: var(--color-background);
     text-align: center;
     padding: 10px;
+}
+
+/* -------------QUERYYYYSSSS---------------------------------------- */
+
+@media (max-width:400px){
+    .me-container{
+        grid-template-columns: 1fr;
+    }
+    .big-title{
+        font-size: 3rem;
+    }
+    .contact-title{
+        font-size: 50px;
+    }
+    .resume-button-container{
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .sticker-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 0 20px;
+    }
+    .sticker-item img, .fillthespace {
+        height: auto; 
+        aspect-ratio: 1/1; 
+        width: 100%;
+    }
+
+    .sticker-title{
+        font-size:3.5rem;
+    }
+    .sticker-blurb{
+        font-size: 1.1rem;
+    }
+
 }
