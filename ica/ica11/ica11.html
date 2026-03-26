@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Story</title>
+    <link rel="stylesheet" href="ica11.css">
+</head>
+<body>
+    <div class="container">
+    <div>
+  <label for="custom-name">Enter custom name:</label>
+  <input id="custom-name" type="text" placeholder="" />
+</div>
+<fieldset>
+  <legend>Choose locale:</legend>
+
+  <label>
+    <input id="us" type="radio" name="uk-us" value="us" checked />
+    US
+  </label>
+
+  <label>
+    <input id="uk" type="radio" name="uk-us" value="uk" />
+    UK
+  </label>
+</fieldset>
+<div>
+  <button class="generate">Generate random story</button>
+</div>
+<!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
+<p class="story"></p>
+</div>
+<!-- JAVAAAAAAAAAAAAAAAAAAAAAAAAAA----SCRIPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT -->
+<script>
+    // Complete variable definitions and random functions
+
+const customName = document.getElementById("custom-name");
+const generateBtn = document.querySelector(".generate");
+const story = document.querySelector(".story");
+
+function randomValueFromArray(array) {
+  const random = Math.floor(Math.random() * array.length);
+  return array[random];
+}
+
+// Raw text strings
+
+let characters=["Chris Pat","Robert Downey JR","Michekey Mouse"];
+let places=["the kitchen","Brazil","that beach"] ;
+let events=["exploded into a million pieces","squatted down to the floor","popped open releasing a foamy like texture"];
+
+
+// Partial return random string function
+
+function returnRandomStoryString() {
+    const randomCharacter=randomValueFromArray(characters);
+    const randomPlace=randomValueFromArray(places);
+    const randomEvent=randomValueFromArray(events);
+ let storyText = `The sun was going to hit the earth at any moment, so ${randomCharacter} decided to make the most of their day. With this plan in place they went to ${randomPlace}, To their surprise they saw ${randomEvent} and they stared at it. Bob saw the whole thing, but was not really surprised — ${randomCharacter} weighs 300 pounds, and it was probably the last day he was going to be on the earth.`;
+
+  return storyText;
+}
+
+// Event listener and partial generate function definition
+
+generateBtn.addEventListener("click", generateStory);
+
+
+
+function generateStory() {
+    let newStory=returnRandomStoryString();
+  if (customName.value !== "") {
+    const name = customName.value;
+    newStory=newStory.replace("Bob",name);
+  }
+
+if (document.getElementById("uk").checked) {
+    const weight = `${Math.round(300 / 14)} stone`;
+    const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
+    newStory = newStory.replace("300 pounds", weight);
+    newStory = newStory.replace("94 Fahrenheit", temperature);
+  }
+
+  // TODO: replace "" with the correct expression
+  story.textContent = newStory;
+  story.style.visibility = "visible";
+}
+</script>
+
+</body>
+</html>

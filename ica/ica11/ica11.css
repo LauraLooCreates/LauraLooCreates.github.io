@@ -1,0 +1,74 @@
+body{
+    display: grid;
+    place-items: center;
+    margin: 0;
+
+    background-color: rgb(255, 251, 245);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.container{
+    background-color: rgb(246, 211, 217);
+    padding: 30px;
+    border-radius: 15px;
+
+    width: 350px;
+    max-width: 90%;
+
+    border: 6px solid  #db6683;
+}
+
+input{
+    width:50% ;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: #fcfbfb;
+  color: black;
+  font-weight: bold;
+
+  
+
+  cursor: pointer;
+}
+
+button:hover{
+    scale: 1.04;
+    background-color: #c34e6b;
+    color: white;
+}
+
+.story {
+  margin-top: 20px;
+  padding: 15px;
+
+  background-color: white;
+  border-radius: 10px;
+
+  visibility: hidden; /* matches your JS */
+}
+
+fieldset{
+    border: none;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+fieldset label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
