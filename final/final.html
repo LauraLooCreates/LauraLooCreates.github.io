@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This is Volume</title>
+    <link rel="stylesheet" href="final.css">
 </head>
 <body>
     <h1>Try to Turn it Up</h1>
@@ -13,5 +14,28 @@
         <button id="yes-btn">Yes</button>
         <button id="no-btn">No</button>
     </div>
+<svg width="500" height="700" id="path">
+  <path 
+    d="M100 20 
+       Q300 100, 100 180 
+       T200 340 
+       T177 480
+       T124  555
+       Q300 600" 
+    stroke="black" 
+    fill="none" 
+    stroke-width="4"
+  />
+  
+  <!-- dot that should start at the top of the path -->
+  <circle class="dot" cx="100" cy="20" r="30" />
+</svg>
+
+<svg id="follow-svg" width="500" height="400" viewBox="0 0 500 400" style="display:block; margin-top:20px;">
+  <rect width="100%" height="100%" fill="transparent" />
+  <circle id="follow-circle" cx="250" cy="200" r="25" fill="black" pointer-events="none" />
+</svg>
+
+<script src="final.js"></script>
 </body>
 </html>
