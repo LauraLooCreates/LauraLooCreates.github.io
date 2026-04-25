@@ -1,1 +1,35 @@
 .dot { fill: rgb(14, 95, 68); stroke: #044; stroke-width: 2; }
+
+
+h1{
+    font-family: "Montserrat",  serif;
+    font
+}
+
+body{
+    display: flex;
+    align-items: center;
+    background-color: beige;
+}
+
+head{
+    display: flex;
+    align-items: center;
+}
+
+#slider{
+    display: flex;
+    align-items: flex-end;
+    background-color: grey;
+}   
+
+#question-box{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #044;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 2px;
+    color: aliceblue;
+}
+
