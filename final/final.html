@@ -11,33 +11,40 @@
     <link rel="stylesheet" href="final.css">
   </head>
 <body>
+  <div class="entire-thing">
     <h1>TRY to adjust your volume</h1>
-    <h2></h2>
-    <div id="slider"></div>
+    <div id="volume-total">
+      <div id="demo"></div>
+      <button id="submit">Submit</button>
+    </div>
     <div id="question-box">
         <p id="question-text"></p>
-        <button id="yes-btn">Yes</button>
-        <button id="no-btn">No</button>
-        
+        <div id="button">
+          <button id="yes-btn">Yes</button>
+          <button id="no-btn">No</button>
+        </div>
     </div>
-    <div id="demo"></div>
-<svg width="500" height="700" id="path">
+    
+    
+<svg width="400" height="570" id="path">
   <path 
     d="M250 20 
-   Q400 120, 100 200
-   Q400 200, 250 300
-    Q100 200, 250 400 
-   Q100 300, 100 380 
-   Q400 460, 250 520 
-   Q150 600, 250 650"
+   Q600 120, 50 200
+   Q600 300, 250 300
+   Q200 200, 250 400 
+   Q100 300, 100 400 
+   Q600 520, 150 540 
+   "
    
     stroke="black" 
     fill="none" 
-    stroke-width="4"></path>
-
-  <circle id="dot" cx="250" cy="20" r="30" fill="green" style="cursor: pointer;" ></circle> 
+    stroke-width="4">
+  </path>
+ 
+  <circle id="dot" cx="250" cy="20" r="20" style="cursor: pointer;" ></circle> 
 </svg>
 
 <script src="final.js"></script>
+</div>
 </body>
 </html>
