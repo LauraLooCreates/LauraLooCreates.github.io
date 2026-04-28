@@ -142,7 +142,10 @@ function resetAll(){
 
 yesBtn.addEventListener('click', () => checkAnswer('yes'));
 noBtn.addEventListener('click', () => checkAnswer('no'));
-submitBtn.addEventListener('click',showVolume);
+submitBtn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    showVolume();
+});
 
 
 let lastTrigger= -1;
@@ -177,15 +180,13 @@ function questionFlow(){
     
     },2000);
 }
-questionBox.addEventListener('click',(e)=>{
+document.addEventListener('click',(e)=>{
     if(state!==STATES.RESULT)return;
 
     if (!questionBox.contains(e.target)){
         questionBox.style.display='none';
-        state=STATES.DRAGGING;
+        state=STATES.IDLE;
     };
-
-    
 
 })
 
