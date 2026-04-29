@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn up</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="final.css">
+  </head>
+<body>
+  <div class="entire-thing">
+    <h1>TRY to adjust your volume</h1>
+    <div id="volume-total">
+      <div id="demo"></div>
+      <button id="submit">Submit</button>
+    </div>
+    <div id="question-box">
+        <p id="question-text"></p>
+        <div id="button">
+          <button id="yes-btn">Yes</button>
+          <button id="no-btn">No</button>
+        </div>
+    </div>
+    
+    
+<svg width="400" height="570" id="path">
+  <path 
+    d="M250 20 
+   Q600 120, 50 200
+   Q600 300, 250 300
+   Q200 200, 250 400 
+   Q100 300, 100 400 
+   Q600 520, 150 540 
+   "
+   
+    stroke="black" 
+    fill="none" 
+    stroke-width="4">
+  </path>
+ 
+  <circle id="dot" cx="250" cy="20" r="20" style="cursor: pointer;" ></circle> 
+</svg>
+
+<script src="final.js"></script>
+</div>
+</body>
+</html>

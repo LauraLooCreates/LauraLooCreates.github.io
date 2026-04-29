@@ -7,7 +7,7 @@
   --color-highlight: #F21B1B;
 }
 
-.dot { fill: var(--color-accent); stroke: var(--color-accent); stroke-width: 2; }
+/* .dot { fill: var(--color-accent); stroke: var(--color-accent); stroke-width: 2; } */
 
 h1{
     font-family: "Montserrat",  serif;
@@ -103,7 +103,6 @@ path{
     stroke: var(--color-secondary);
     height: auto;
     width: 100px;
-    pointer-events: none;
 }
 
 #dot{

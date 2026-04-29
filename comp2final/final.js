@@ -47,7 +47,7 @@ const minY=20;
 const maxY=500;
 
 dot.addEventListener('mousedown',(e)=>{
-    if(state!==STATES.IDLE && state!==STATES.DRAGGING)return;
+    if(state===STATES.RESULT)return;
     isMouseDown=true;
     state=STATES.DRAGGING;
     questionFlow(); 
@@ -76,8 +76,6 @@ function showQuestion() {
     clearInterval(questionInterval);
     questionInterval = null;
 
-    isMouseDown=false;
-
     questionText.textContent = currentNode.text;
 
     yesBtn.style.display = "inline-block";
@@ -87,6 +85,8 @@ function showQuestion() {
 }
 
 function showVolume(){
+    clearInterval(questionInterval);
+    questionInterval=null;
     state= STATES.RESULT;
     
     const value = output.textContent;
@@ -99,9 +99,6 @@ function showVolume(){
     questionBox.style.display="block";
 
     isShowingResult=true;
-
-    clearInterval(questionInterval);
-    questionInterval = null;
 
 }
 
@@ -143,6 +140,8 @@ function resetAll(){
     hideQuestion();
 
     state=STATES.IDLE;
+
+    refillBoids();
 }
 
 yesBtn.addEventListener('click', () => checkAnswer('yes'));
@@ -179,11 +178,11 @@ function questionFlow(){
     if(questionInterval) return;
 
     questionInterval=setInterval(()=>{
-        if(!currentNode || state !== STATES.DRAGGING || !isMouseDown)return;
+        if(!currentNode || state === STATES.IDLE || state===STATES.RESULT)return;
 
         showQuestion();
     
-    },2000);
+    },3000);
 }
 document.addEventListener('click',(e)=>{
     if(state!==STATES.RESULT)return;
@@ -207,3 +206,74 @@ document.addEventListener('mouseup', () => {
 });
 
 questionBox.style.display = 'none';
+
+let boids = [];
+const numBoids = 26;
+const svgWidth = 400;
+const svgHeight = 570;
+
+function randomColor() {
+    const colors = ['#0476D9', '#056CF2', '#F29F05', '#F2E8C9', '#F21B1B'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function createBoid() {
+    const r = Math.random() * 8+4; 
+    const x = Math.random() * (svgWidth - 2*r) + r;
+    const y = Math.random() * (svgHeight - 2*r) + r;
+    const vx = (Math.random() - 0.5) * 4;
+    const vy = (Math.random() - 0.5) * 4;
+    const color = randomColor();
+    const border = randomColor();
+    
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    circle.setAttribute('r', r);
+    circle.setAttribute('fill', color);
+    circle.setAttribute('stroke', border);
+    circle.setAttribute('stroke-width', '2');
+    circle.style.cursor = 'pointer';
+    
+    circle.addEventListener('click', () => {
+        pathSvg.removeChild(circle);
+        boids = boids.filter(b => b.circle !== circle);
+    });
+    
+    pathSvg.appendChild(circle);
+    
+    return { circle, x, y, vx, vy, r ,border};
+}
+
+function refillBoids() {
+    boids.forEach(b => pathSvg.removeChild(b.circle));
+    boids = [];
+    for (let i = 0; i < numBoids; i++) {
+        boids.push(createBoid());
+    }
+}
+
+function animateBoids() {
+    boids.forEach(boid => {
+        boid.x += boid.vx;
+        boid.y += boid.vy;
+        
+        if (boid.x - boid.r <= 0 || boid.x + boid.r >= svgWidth) {
+            boid.vx *= -1;
+            boid.x = Math.max(boid.r, Math.min(svgWidth - boid.r, boid.x));
+        }
+        if (boid.y - boid.r <= 0 || boid.y + boid.r >= svgHeight) {
+            boid.vy *= -1;
+            boid.y = Math.max(boid.r, Math.min(svgHeight - boid.r, boid.y));
+        }
+        
+        boid.circle.setAttribute('cx', boid.x);
+        boid.circle.setAttribute('cy', boid.y);
+    });
+    
+    requestAnimationFrame(animateBoids);
+}
+
+animateBoids();
+
+refillBoids();
