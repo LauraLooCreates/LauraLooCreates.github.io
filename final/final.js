@@ -193,7 +193,7 @@ document.addEventListener('click',(e)=>{
 document.addEventListener('mouseup', () => {
     isMouseDown=false;
 
-    clearInterval(questionInterval);
+    (questionInterval);
     questionInterval = null;
 
     if(state===STATES.DRAGGING){
