@@ -47,7 +47,7 @@ const minY=20;
 const maxY=500;
 
 dot.addEventListener('mousedown',(e)=>{
-    if(state===STATES.RESULT)return;
+    if(state!==STATES.IDLE && state!==STATES.DRAGGING)return;
     isMouseDown=true;
     state=STATES.DRAGGING;
     questionFlow(); 
@@ -76,6 +76,8 @@ function showQuestion() {
     clearInterval(questionInterval);
     questionInterval = null;
 
+    isMouseDown=false;
+
     questionText.textContent = currentNode.text;
 
     yesBtn.style.display = "inline-block";
@@ -85,8 +87,6 @@ function showQuestion() {
 }
 
 function showVolume(){
-    clearInterval(questionInterval);
-    questionInterval=null;
     state= STATES.RESULT;
     
     const value = output.textContent;
@@ -99,6 +99,9 @@ function showVolume(){
     questionBox.style.display="block";
 
     isShowingResult=true;
+
+    clearInterval(questionInterval);
+    questionInterval = null;
 
 }
 
@@ -140,8 +143,6 @@ function resetAll(){
     hideQuestion();
 
     state=STATES.IDLE;
-
-    refillBoids();
 }
 
 yesBtn.addEventListener('click', () => checkAnswer('yes'));
@@ -178,11 +179,11 @@ function questionFlow(){
     if(questionInterval) return;
 
     questionInterval=setInterval(()=>{
-        if(!currentNode || state === STATES.IDLE || state===STATES.RESULT)return;
+        if(!currentNode || state !== STATES.DRAGGING || !isMouseDown)return;
 
         showQuestion();
     
-    },3000);
+    },2000);
 }
 document.addEventListener('click',(e)=>{
     if(state!==STATES.RESULT)return;

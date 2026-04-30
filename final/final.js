@@ -47,7 +47,7 @@ const minY=20;
 const maxY=500;
 
 dot.addEventListener('mousedown',(e)=>{
-    if(state!==STATES.IDLE && state!==STATES.DRAGGING)return;
+    if(state===STATES.QUESTION)return;
     isMouseDown=true;
     state=STATES.DRAGGING;
     questionFlow(); 
@@ -179,7 +179,7 @@ function questionFlow(){
     if(questionInterval) return;
 
     questionInterval=setInterval(()=>{
-        if(!currentNode || state !== STATES.DRAGGING || !isMouseDown)return;
+        if(!currentNode || state === STATES.IDLE || !isMouseDown)return;
 
         showQuestion();
     
