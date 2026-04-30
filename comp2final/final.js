@@ -219,11 +219,11 @@ function randomColor() {
 }
 
 function createBoid() {
-    const r = Math.random() * 8+4; 
+    const r = Math.random() * 15 + 5; 
     const x = Math.random() * (svgWidth - 2*r) + r;
     const y = Math.random() * (svgHeight - 2*r) + r;
-    const vx = (Math.random() - 0.5) * 4;
-    const vy = (Math.random() - 0.5) * 4;
+    const vx = (Math.random() - 0.5) * 2;
+    const vy = (Math.random() - 0.5) * 2;
     const color = randomColor();
     const border = randomColor();
     
@@ -260,11 +260,11 @@ function animateBoids() {
         boid.y += boid.vy;
         
         if (boid.x - boid.r <= 0 || boid.x + boid.r >= svgWidth) {
-            boid.vx *= -1;
+            boid.vx *= -0.5;
             boid.x = Math.max(boid.r, Math.min(svgWidth - boid.r, boid.x));
         }
         if (boid.y - boid.r <= 0 || boid.y + boid.r >= svgHeight) {
-            boid.vy *= -1;
+            boid.vy *= -0.5;
             boid.y = Math.max(boid.r, Math.min(svgHeight - boid.r, boid.y));
         }
         
